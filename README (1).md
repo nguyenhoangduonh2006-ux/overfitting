@@ -11,7 +11,6 @@ dựa trên **diện tích** bằng **Polynomial Regression**.
 - [Cấu trúc project](#cấu-trúc-project)
 - [Cài đặt](#cài-đặt)
 - [1. `overfitting_demo.py` — Overfitting & Ridge Regularization](#1-overfitting_demopy--overfitting--ridge-regularization)
-- [2. `early_stopping_demo.py` — Overfitting & Early Stopping](#2-early_stopping_demopy--overfitting--early-stopping)
 - [Giải thích khái niệm](#giải-thích-khái-niệm)
 - [Tài liệu tham khảo](#tài-liệu-tham-khảo)
 
@@ -25,11 +24,10 @@ Cả 2 script đều làm theo đúng quy trình trong slide:
    error rất cao.
 3. Áp dụng **một kỹ thuật chống overfitting** lấy từ slide để khắc phục, rồi
    so sánh kết quả trước/sau bằng số liệu và biểu đồ.
-
-| Script | Kỹ thuật chống overfitting minh hoạ |
+ | Kỹ thuật chống overfitting minh hoạ |
 |---|---|
 | `overfitting_demo.py` | Chọn bậc đa thức qua **Validation** + **Ridge Regularization** (L2) |
-| `early_stopping_demo.py` | **Early Stopping** (dừng huấn luyện đúng lúc) |
+**Early Stopping** (dừng huấn luyện đúng lúc) |
 
 ## Cấu trúc project
 
@@ -37,8 +35,7 @@ Cả 2 script đều làm theo đúng quy trình trong slide:
 .
 ├── du_lieu_gia_nha.csv         # Dữ liệu: diện tích, số phòng ngủ, khoảng cách trung tâm, giá nhà
 ├── overfitting_demo.py         # Demo: Overfitting -> chọn bậc đa thức qua Validation -> Ridge Regularization
-├── overfitting_demo.png        # Biểu đồ kết quả của overfitting_demo.py
-├── early_stopping_demo.py      # Demo: Overfitting -> Early Stopping
+    # Demo: Overfitting -> Early Stopping
 ├── early_stopping_demo.png     # Biểu đồ kết quả của early_stopping_demo.py
 └── README.md
 ```
@@ -106,13 +103,6 @@ cùng thư mục.
   underfitting/overfitting
 - (C) Mô hình sau khi thêm Ridge Regularization (bậc 15, λ tối ưu)
 - (D) Validation error theo giá trị λ → xác định λ tối ưu
-
-## 2. `early_stopping_demo.py` — Overfitting & Early Stopping
-
-Vì Early Stopping là kỹ thuật áp dụng **trong lúc huấn luyện lặp** (không
-dùng nghiệm đóng như `LinearRegression.fit()`), script này tự cài đặt
-**Gradient Descent (Adam optimizer)** để huấn luyện đa thức bậc cao, ghi lại
-train/validation/test error ở **mỗi vòng lặp**.
 
 **Quy trình:**
 
